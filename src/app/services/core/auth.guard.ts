@@ -13,10 +13,10 @@ export class AuthGuard implements CanActivate {
 
   canActivate(): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree{
      let tk = this._ls.get(GlobalConstants.lsKeys.token);
-     if(!tk) {
-        this._router.navigate(['/auth']);
-       return false
-     }
+    //  if(!tk) {
+    //     this._router.navigate(['/auth']);
+    //    return false
+    //  }
      return true
   }
 

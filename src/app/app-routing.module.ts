@@ -12,11 +12,28 @@ const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
+          import('./modules/tasks/tasks.module').then(
+            (m) => m.TasksModule
+          ),
+          canActivate: [AuthGuard]
+      },
+      {
+        path: 'project',
+        loadChildren: () =>
           import('./modules/projects/projects.module').then(
             (m) => m.ProjectsModule
           ),
           canActivate: [AuthGuard]
       },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./modules/users/users.module').then(
+            (m) => m.UsersModule
+          ),
+          canActivate: [AuthGuard]
+      },
+
     ],
   },
   {
