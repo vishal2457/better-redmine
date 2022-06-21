@@ -3,7 +3,7 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'todays-task',
-  template: `<h4 class="mt-3">Today</h4>
+  template: `
     <div cdkDropList (cdkDropListDropped)="drop($event)">
       <mat-list role="list">
         <mat-list-item *ngFor="let task of tasks" cdkDrag>

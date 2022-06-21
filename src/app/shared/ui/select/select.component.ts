@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 @Component({
   selector: 'app-select',
   template: `
-  <mat-form-field>
+  <mat-form-field appearance="outline">
   <mat-label>{{label}}</mat-label>
   <mat-select  name="food">
     <mat-option *ngFor="let item of items" [value]="bindValue">

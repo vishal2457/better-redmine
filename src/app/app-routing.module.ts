@@ -15,7 +15,8 @@ const routes: Routes = [
           import('./modules/tasks/tasks.module').then(
             (m) => m.TasksModule
           ),
-          canActivate: [AuthGuard]
+          canActivate: [AuthGuard],
+          data: {animation: 'taskPage'}
       },
       {
         path: 'project',
@@ -23,7 +24,8 @@ const routes: Routes = [
           import('./modules/projects/projects.module').then(
             (m) => m.ProjectsModule
           ),
-          canActivate: [AuthGuard]
+          canActivate: [AuthGuard],
+          data: {animation: 'projectPage'}
       },
       {
         path: 'user',
@@ -31,7 +33,8 @@ const routes: Routes = [
           import('./modules/users/users.module').then(
             (m) => m.UsersModule
           ),
-          canActivate: [AuthGuard]
+          canActivate: [AuthGuard],
+          data: {animation: 'userPage'}
       },
 
     ],

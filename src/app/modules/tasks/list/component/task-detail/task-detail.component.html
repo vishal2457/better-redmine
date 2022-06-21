@@ -1,0 +1,86 @@
+<div>
+  <mat-dialog-content class="m-0">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="d-flex my-2 justify-content-between">
+          <div class="d-flex">
+            <mat-checkbox>{{ data.title }}</mat-checkbox>
+            <p style="margin-left: 10px"></p>
+          </div>
+
+          <button matTooltip="edit" matTooltipPosition="left" mat-icon-button>
+            <br-icon icon="edit" size="md"></br-icon>
+          </button>
+        </div>
+        <small class="text-muted-5"
+          >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex
+          laboriosam cum modi iste inventore! Dolorem vitae animi minus
+          voluptate autem quas totam, pariatur reiciendis corporis aut eum iure,
+          ipsum impedit?</small
+        >
+
+        <!-- comments -->
+        <!-- <hr />
+        <div>
+          <h4>Comments</h4>
+          <mat-list role="list" class="mb-4">
+            <mat-list-item role="listitem">
+              <div>
+                <div class="d-flex mb-2">
+                  <p>vishal acharya </p>
+                  <small class="text-muted-5">&nbsp;&nbsp;9 jun 2020</small>
+                </div>
+                <div>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas, corporis?
+                </div>
+              </div>
+
+            </mat-list-item>
+
+
+          </mat-list>
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+          </mat-form-field>
+        </div> -->
+        <!-- comments -->
+
+      </div>
+      <div class="col-md-4 right-side-detail">
+        <app-select
+          [items]="projects"
+          label="Project"
+          bindName="key"
+          bindValue="key"
+          class="pb-2"
+        ></app-select>
+        <mat-form-field class="pb-2" appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <app-select
+          class="pb-2"
+          [items]="priority"
+          label="Priority"
+          bindName="key"
+          bindValue="key"
+        ></app-select>
+        <mat-form-field appearance="outline">
+          <mat-label>Spent time</mat-label>
+          <input matInput type="number" />
+          <mat-hint>In hours</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <div mat-dialog-actions class="justify-content-end">
+    <button mat-button>Cancel</button>
+    <button mat-button cdkFocusInitial>Save</button>
+  </div>
+</div>
